@@ -21,7 +21,7 @@ const tripSchema = new Schema({
         ],
         default: 'draft'
     },
-    updatedAt: Date
+    updatedAt: Date,
 });
 
 module.exports = model('Trip', tripSchema);

@@ -54,24 +54,30 @@ input LoginInput {
 }
 
 input TripCreationInput {
-    title: String!
     createdBy: ID!
-    location: String
-    participants: [ID]
-    tripStatus: TripStatusType
-}
-
-input TripUpdateInput {
-    title: String
-    # departureDate: String
-    # returnDate: String
+    title: String!
+    departureDate: String
+    returnDate: String
     location: String
     participants: [ID]
     # emergencyContacts: [Contact]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
-    tripStatus: TripStatusType
+    # tripStatus: TripStatusType
+}
+
+input TripUpdateInput {
+    title: String
+    departureDate: String
+    returnDate: String
+    location: String
+    participants: [ID]
+    # emergencyContacts: [Contact]
+    # activities: [Activity]
+    # supplies: [Supply]
+    # comments: [Comment]
+    # tripStatus: TripStatusType
 }
 
 input ParticipantInput {
@@ -95,10 +101,12 @@ type Query {
 }
 
 type Mutation {
-    registerUser(registerInput: RegisterInput!): User!
-    loginUser(loginInput: LoginInput!): User!
-    createTrip(tripCreationInput: TripCreationInput!): Trip!
-    updateTrip(id: ID!, tripUpdateInput: TripUpdateInput!): Trip!
-    createParticipant(participantInput: ParticipantInput!): Participant!
+    registerUser(registerInput: RegisterInput): User!
+    loginUser(loginInput: LoginInput): User!
+    createTrip(tripCreationInput: TripCreationInput): Trip!
+    updateTrip(id: ID!, tripUpdateInput: TripUpdateInput): Trip!
+    createParticipant(participantInput: ParticipantInput): Participant!
+    deleteParticipant(id: ID!): Participant!
+    deleteParticipants(ids: [ID]!): [Participant]!
 }
 `

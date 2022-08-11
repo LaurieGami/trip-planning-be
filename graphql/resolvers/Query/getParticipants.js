@@ -8,7 +8,7 @@ async function getParticipants(root, args, context) {
 
     if (!user) throw new ApolloError(`User ${userId} does not exist`, 'INVALID_USER')
 
-    return await Participant.find({ userId: userId })
+    return await Participant.find({ userId: userId, isDeleted: { $ne: true } })
 } 
 
 module.exports = getParticipants

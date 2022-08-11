@@ -8,6 +8,8 @@ const registerUser = require('./Mutation/registerUser')
 const createTrip = require('./Mutation/createTrip')
 const updateTrip = require('./Mutation/updateTrip')
 const createParticipant = require('./Mutation/createParticipant')
+const deleteParticipant = require('./Mutation/deleteParticipant')
+const deleteParticipants = require('./Mutation/deleteParticipants')
 
 const Trip = require('./Trip')
 
@@ -23,7 +25,9 @@ module.exports = {
         registerUser,
         createTrip,
         updateTrip,
-        createParticipant
+        createParticipant,
+        deleteParticipant,
+        deleteParticipants
     },
     Trip
 }

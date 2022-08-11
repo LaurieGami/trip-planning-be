@@ -20,8 +20,6 @@ module.exports = (context) => {
                 return decoded
             })
 
-            console.log('user decoded', user)
-
             return user
         }
     }

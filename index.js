@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
 })
 
 mongoose.connect(MONGO_DB)
