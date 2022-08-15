@@ -60,11 +60,11 @@ input TripCreationInput {
     returnDate: String
     location: String
     participants: [ID]
+    tripStatus: TripStatusType
     # emergencyContacts: [Contact]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
-    # tripStatus: TripStatusType
 }
 
 input TripUpdateInput {
@@ -73,11 +73,11 @@ input TripUpdateInput {
     returnDate: String
     location: String
     participants: [ID]
+    tripStatus: TripStatusType
     # emergencyContacts: [Contact]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
-    # tripStatus: TripStatusType
 }
 
 input ParticipantInput {
