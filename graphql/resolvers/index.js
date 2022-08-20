@@ -2,6 +2,7 @@ const getUser = require('./Query/getUser')
 const getTrip = require('./Query/getTrip')
 const getTrips = require('./Query/getTrips')
 const getParticipants = require('./Query/getParticipants')
+const getContacts = require('./Query/getContacts')
 
 const loginUser = require('./Mutation/loginUser')
 const registerUser = require('./Mutation/registerUser')
@@ -19,7 +20,8 @@ module.exports = {
         getUser,
         getTrip,
         getTrips,
-        getParticipants
+        getParticipants,
+        getContacts
     },
     Mutation: {
         loginUser,

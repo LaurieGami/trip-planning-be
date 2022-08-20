@@ -109,6 +109,7 @@ type Query {
     getTrip(id: ID!): Trip
     getTrips(userId: ID!): [Trip]
     getParticipants(userId: ID!): [Participant]
+    getContacts(userId: ID!): [Contact]
 }
 
 type Mutation {
