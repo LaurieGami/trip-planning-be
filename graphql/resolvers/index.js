@@ -10,6 +10,7 @@ const updateTrip = require('./Mutation/updateTrip')
 const createParticipant = require('./Mutation/createParticipant')
 const deleteParticipant = require('./Mutation/deleteParticipant')
 const deleteParticipants = require('./Mutation/deleteParticipants')
+const addContact = require('./Mutation/addContact')
 
 const Trip = require('./Trip')
 
@@ -27,7 +28,8 @@ module.exports = {
         updateTrip,
         createParticipant,
         deleteParticipant,
-        deleteParticipants
+        deleteParticipants,
+        addContact
     },
     Trip
 }

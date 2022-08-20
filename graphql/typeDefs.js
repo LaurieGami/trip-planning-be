@@ -18,7 +18,7 @@ type Trip {
     returnDate: String
     location: String
     participants: [Participant]
-    # emergencyContacts: [EmergContact]
+    emergencyContacts: [Contact]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
@@ -33,13 +33,15 @@ type Participant {
     lastName: String!
 }
 
-# type EmergContact {
-#     id: ID!
-#     userId: ID!
-#     firstName: String!
-#     lastName: String!
-#     phoneNumber: String!
-# }
+type Contact {
+    id: ID!
+    userId: ID!
+    firstName: String!
+    lastName: String!
+    email: String
+    phone: String!
+    textAlert: Boolean!
+}
 
 input RegisterInput {
     username: String
@@ -61,7 +63,7 @@ input TripCreationInput {
     location: String
     participants: [ID]
     tripStatus: TripStatusType
-    # emergencyContacts: [Contact]
+    emergencyContacts: [ID]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
@@ -74,7 +76,7 @@ input TripUpdateInput {
     location: String
     participants: [ID]
     tripStatus: TripStatusType
-    # emergencyContacts: [Contact]
+    emergencyContacts: [ID]
     # activities: [Activity]
     # supplies: [Supply]
     # comments: [Comment]
@@ -84,6 +86,15 @@ input ParticipantInput {
     userId: ID!
     firstName: String!
     lastName: String!
+}
+
+input ContactInput {
+    userId: ID!
+    firstName: String!
+    lastName: String!
+    email: String
+    phone: String!
+    textAlert: Boolean
 }
 
 enum TripStatusType {
@@ -108,5 +119,6 @@ type Mutation {
     createParticipant(participantInput: ParticipantInput): Participant!
     deleteParticipant(id: ID!): Participant!
     deleteParticipants(ids: [ID]!): [Participant]!
+    addContact(contactInput: ContactInput): Contact!
 }
 `

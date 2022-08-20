@@ -11,6 +11,7 @@ const tripSchema = new Schema({
     returnDate: Date,
     location: String,
     participants: [String],
+    emergencyContacts: [String],
     tripStatus: {
         type: String,
         enum: [
